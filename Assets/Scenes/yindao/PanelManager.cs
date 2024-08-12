@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class PanelManager : MonoBehaviour
 {
-    public GameObject Panel;
-
-    public void OpenPanel()
+    
+    public void OpenPanel(GameObject Panel)
     {
         if (Panel != null)
         {
