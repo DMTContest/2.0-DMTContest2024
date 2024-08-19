@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Option : MonoBehaviour
+public class Option3 : MonoBehaviour
 {
     private bool isChoose = false;
-    private Option AOption; // 00选项的脚本引用
-    private Option BOption; // 01选项的脚本引用
-    private Option COption; // 10选项的脚本引用
-    private Option DOption; // 11选项的脚本引用
+    private Option3 AOption; // 00选项的脚本引用
+    private Option3 BOption; // 01选项的脚本引用
+    private Option3 COption; // 10选项的脚本引用
+    private Option3 DOption; // 11选项的脚本引用
 
     [SerializeField] private Sprite chosenSprite; // 选择状态下的Sprite
     [SerializeField] private Sprite unchosenSprite; // 未选择状态下的Sprite
@@ -18,21 +18,20 @@ public class Option : MonoBehaviour
     private void Start()
     {
         // 获取当前Button的Image组件
-
         buttonImage = GetComponent<Image>();
 
         // 获得选项的脚本引用
         GameObject OA = GameObject.Find("Btn_1");
-        AOption = OA.GetComponent<Option>();
+        AOption = OA.GetComponent<Option3>();
 
         GameObject OB = GameObject.Find("Btn_2");
-        BOption = OB.GetComponent<Option>();
+        BOption = OB.GetComponent<Option3>();
 
         GameObject OC = GameObject.Find("Btn_3");
-        COption = OC.GetComponent<Option>();
+        COption = OC.GetComponent<Option3>();
 
         GameObject OD = GameObject.Find("Btn_4");
-        DOption = OD.GetComponent<Option>();
+        DOption = OD.GetComponent<Option3>();
 
         //Debug.Log("已经引用四个选项脚本");
     }
@@ -66,11 +65,11 @@ public class Option : MonoBehaviour
     private void CheckAnswer()
     {
         //Debug.Log("正在调用答案检查器");
-        Option CorrectOption1 = AOption;
-        Option CorrectOption2 = DOption;
+        Option3 CorrectOption1 = AOption;
+        Option3 CorrectOption2 = BOption;
 
-        Option WrongOption1 = COption;
-        Option WrongOption2 = BOption;
+        Option3 WrongOption1 = COption;
+        Option3 WrongOption2 = DOption;
 
         if (CorrectOption1.isChoose == true &&
             CorrectOption2.isChoose == true &&
@@ -79,7 +78,7 @@ public class Option : MonoBehaviour
         {
             Debug.Log("答对啦!");
             AOption.correct = 1;
-            SceneManager.LoadScene("DG22");
+            SceneManager.LoadScene("DG24");
         }
     }
 }

@@ -31,6 +31,9 @@ public class DG2Instance : MonoBehaviour
     public float HWrong4;
     public string ScoreForDigitWind;
 
+    public float FinalScoreFromDG2;
+    public bool firstTime = true;
+
     private void Awake()
     {
         // 确保只有一个 SceneTransition 实例
@@ -53,6 +56,9 @@ public class DG2Instance : MonoBehaviour
             _time = GetTimeFromScene1();
             
             JWrong1 = 0 ;
+
+            Debug.Log("JCorrect1 : " + JCorrect1);
+            Debug.Log("JWrong1 :" + JWrong1);
         }
         if(SceneManager.GetActiveScene().name == "DG22")
         {
@@ -60,79 +66,106 @@ public class DG2Instance : MonoBehaviour
             _time = GetTimeFromScene2();
             
             JWrong2 = 0;
- 
-        }if(SceneManager.GetActiveScene().name == "DG23")
+            Debug.Log("JCorrect2 : " + JCorrect2);
+            Debug.Log("JWrong2 :" + JWrong2);
+
+        }
+        if(SceneManager.GetActiveScene().name == "DG23")
         {
             JCorrect3= GetCorrectFromScene2();
 
             _time = GetTimeFromScene3();
             
-            JWrong3 =GetWrongNumFromScene3();
- 
+            JWrong3 = 0;
+
+            Debug.Log("JCorrect3 : " + JCorrect3);
+            Debug.Log("JWrong3 :" + JWrong3);
         }        
         if(SceneManager.GetActiveScene().name == "DG24"){
             MCorrect1= GetCorrectFromScene4();
 
             _time = GetTimeFromScene4();
             
-            MWrong1 =GetWrongNumFromScene4();
+            MWrong1 = 0;
+            Debug.Log("MCorrect1 : " + MCorrect1);
+            Debug.Log("MWrong1 :" + MWrong1);
         }
         if(SceneManager.GetActiveScene().name == "DG25")
         {
             MCorrect2= GetCorrectFromScene5();
             _time = GetTimeFromScene5();
             
-            MWrong2 =GetWrongNumFromScene5();
- 
-        }if(SceneManager.GetActiveScene().name == "DG26")
+            MWrong2 = 0;
+            Debug.Log("MCorrect2 : " + MCorrect2);
+            Debug.Log("MWrong2 :" + MWrong2);
+
+        }
+        if(SceneManager.GetActiveScene().name == "DG26")
         {
             MCorrect3= GetCorrectFromScene6();
 
             _time = GetTimeFromScene6();
             
-            MWrong3 =GetWrongNumFromScene6();
- 
+            MWrong3 = 0;
+            Debug.Log("MCorrect3 : " + MCorrect3);
+            Debug.Log("MWrong3 :" + MWrong3);
+
         }        
         if(SceneManager.GetActiveScene().name == "DG27"){
             HCorrect1= GetCorrectFromScene7();
 
             _time = GetTimeFromScene7();
             
-            HWrong1 =GetWrongNumFromScene7();
+            HWrong1 = 0;
+            Debug.Log("HCorrect1 : " + HCorrect1);
+            Debug.Log("HWrong1 :" + HWrong1);
         }
         if(SceneManager.GetActiveScene().name == "DG28")
         {
             HCorrect2= GetCorrectFromScene8();
             _time = GetTimeFromScene8();
             
-            HWrong2 =GetWrongNumFromScene8();
- 
-        }if(SceneManager.GetActiveScene().name == "DG29")
+            HWrong2 = 0;
+            Debug.Log("HCorrect2 : " + HCorrect2);
+            Debug.Log("HWrong2 :" + HWrong2);
+
+        }
+        if(SceneManager.GetActiveScene().name == "DG29")
         {
             HCorrect3= GetCorrectFromScene9();
 
             _time = GetTimeFromScene9();
             
-            HWrong3 =GetWrongNumFromScene9();
- 
+            HWrong3 = 0;
+            Debug.Log("HCorrect3 : " + HCorrect3);
+            Debug.Log("HWrong3 :" + HWrong3);
+
         }        
         if(SceneManager.GetActiveScene().name == "DG210"){
-            HCorrect4= GetCorrectFromScene10();
+            HCorrect4= GetCorrectFromScene210();
 
             _time = GetTimeFromScene10();
             
-            HWrong4 =GetWrongNumFromScene10();
+            HWrong4 = 0;
+            Debug.Log("HCorrect4 : " + HCorrect4);
+            Debug.Log("HWrong4 :" + HWrong4);
         }
         if (SceneManager.GetActiveScene().name == "DG2Final")
         {
-           ScoreForDigitWind = 
-        (
-           Jcorrect*10 - (JWR1 +JWR2 +JWR3)*10
-        +  Mcorrect*10 - (MWR1 +MWR2 +MWR3)*10
-        +  Hcorrect*10 - (HWR1 +HWR2 +HWR3 + HWR4)*10
-        ).ToString();
-        
-        
+            ScoreForDigitWind =
+          (
+             Jcorrect * 10 - (JWR1 + JWR2 + JWR3) * 10
+          + Mcorrect * 10 - (MWR1 + MWR2 + MWR3) * 10
+          + Hcorrect * 10 - (HWR1 + HWR2 + HWR3 + HWR4) * 10
+          ).ToString();
+
+            FinalScoreFromDG2 = Jcorrect * 10 - (JWR1 + JWR2 + JWR3) * 10
+        + Mcorrect * 10 - (MWR1 + MWR2 + MWR3) * 10
+        + Hcorrect * 10 - (HWR1 + HWR2 + HWR3 + HWR4) * 10;
+
+            firstTime = false;
+
+
 
         }
     }
@@ -153,7 +186,8 @@ public class DG2Instance : MonoBehaviour
         private float GetCorrectFromScene1()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       Option c = FindObjectOfType<Option>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option c = OA.GetComponent<Option>();
         if (c != null)
     {
         return c.correct;
@@ -226,6 +260,15 @@ public class DG2Instance : MonoBehaviour
         get { return instance != null ? instance.ScoreForDigitWind : null; }
     }
 
+            public static float FinalScoreForDG2
+    {
+        get { return instance != null ? instance.FinalScoreFromDG2 : 0f; }
+    }
+            public static bool FirstTime
+    {
+        get { return instance != null ? instance.firstTime : true; }
+    }
+
     private float GetTimeFromScene2()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
@@ -242,7 +285,8 @@ public class DG2Instance : MonoBehaviour
         private float GetCorrectFromScene2()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       Option2 c = FindObjectOfType<Option2>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option2 c = OA.GetComponent<Option2>();
         if (c != null)
     {
         return c.correct;
@@ -253,309 +297,221 @@ public class DG2Instance : MonoBehaviour
     }
     }
 
-        private float GetTimeFromScene3()
+    private float GetTimeFromScene3()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG3 c = FindObjectOfType<TimeMG3>();
+        TimeDG23 c = FindObjectOfType<TimeDG23>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene3()
-    {
-       GameManager3 c = FindObjectOfType<GameManager3>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene3()
+    private float GetCorrectFromScene3()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager3 c = FindObjectOfType<GameManager3>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option3 c = OA.GetComponent<Option3>();
         if (c != null)
-    {
-        return c.correct;
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-           private float GetTimeFromScene4()
+    private float GetTimeFromScene4()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG4 c = FindObjectOfType<TimeMG4>();
+        TimeDG24 c = FindObjectOfType<TimeDG24>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene4()
-    {
-       GameManager4 c = FindObjectOfType<GameManager4>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene4()
+    private float GetCorrectFromScene4()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager4 c = FindObjectOfType<GameManager4>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option4 c = OA.GetComponent<Option4>();
         if (c != null)
-    {
-        return c.correct;
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }            
-        private float GetTimeFromScene5()
+    private float GetTimeFromScene5()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG5 c = FindObjectOfType<TimeMG5>();
+        TimeDG25 c = FindObjectOfType<TimeDG25>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene5()
-    {
-       GameManager5 c = FindObjectOfType<GameManager5>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene5()
+    private float GetCorrectFromScene5()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager5 c = FindObjectOfType<GameManager5>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option5 c = OA.GetComponent<Option5>();
         if (c != null)
-    {
-        return c.correct;
-    }
-    else
-    {
-        return 0f;
-    }
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
 
-        private float GetTimeFromScene6()
+    private float GetTimeFromScene6()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG6 c = FindObjectOfType<TimeMG6>();
+        TimeDG26 c = FindObjectOfType<TimeDG26>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene6()
-    {
-       GameManager6 c = FindObjectOfType<GameManager6>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene6()
+    private float GetCorrectFromScene6()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager6 c = FindObjectOfType<GameManager6>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option6 c = OA.GetComponent<Option6>();
         if (c != null)
-    {
-        return c.correct;
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }            
-        private float GetTimeFromScene7()
+    private float GetTimeFromScene7()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG7 c = FindObjectOfType<TimeMG7>();
+        TimeDG27 c = FindObjectOfType<TimeDG27>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene7()
-    {
-       GameManager7 c = FindObjectOfType<GameManager7>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene7()
+    private float GetCorrectFromScene7()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager7 c = FindObjectOfType<GameManager7>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option7 c = OA.GetComponent<Option7>();
         if (c != null)
-    {
-        return c.correct;
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetTimeFromScene8()
+    private float GetTimeFromScene8()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG8 c = FindObjectOfType<TimeMG8>();
+        TimeDG28 c = FindObjectOfType<TimeDG28>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene8()
-    {
-       GameManager8 c = FindObjectOfType<GameManager8>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene8()
+    private float GetCorrectFromScene8()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager8 c = FindObjectOfType<GameManager8>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option8 c = OA.GetComponent<Option8>();
         if (c != null)
-    {
-        return c.correct;
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetTimeFromScene9()
+    private float GetTimeFromScene9()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG9 c = FindObjectOfType<TimeMG9>();
+        TimeDG29 c = FindObjectOfType<TimeDG29>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene9()
-    {
-       GameManager9 c = FindObjectOfType<GameManager9>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene9()
+    private float GetCorrectFromScene9()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager9 c = FindObjectOfType<GameManager9>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option9 c = OA.GetComponent<Option9>();
         if (c != null)
-    {
-        return c.correct;
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetTimeFromScene10()
+    private float GetTimeFromScene10()
     {
         // 查 Clock1 脚本并获取其 time 属性的值
-       TimeMG10 c = FindObjectOfType<TimeMG10>();
+        TimeDG210 c = FindObjectOfType<TimeDG210>();
         if (c != null)
-    {
-        return c.timeStart;
+        {
+            return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
     }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetWrongNumFromScene10()
-    {
-       GameManager10 c = FindObjectOfType<GameManager10>();
-        if (c != null)
-    {
-        return c.wrong;
-    }
-    else
-    {
-        return 0f;
-    }
-    }
-        private float GetCorrectFromScene10()
+    private float GetCorrectFromScene210()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-       GameManager10 c = FindObjectOfType<GameManager10>();
+        GameObject OA = GameObject.Find("Btn_1");
+        Option10 c = OA.GetComponent<Option10>();
         if (c != null)
-    {
-        return c.correct;
-    }
-    else
-    {
-        return 0f;
-    }
+        {
+            return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
     }
 }

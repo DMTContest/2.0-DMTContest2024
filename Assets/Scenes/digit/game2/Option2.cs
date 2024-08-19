@@ -77,8 +77,8 @@ public class Option2 : MonoBehaviour
             WrongOption2.isChoose == false)
         {
             Debug.Log("答对啦!");
-            correct = 1;
-            //SceneManager.LoadScene("MG2");
+            AOption.correct = 1;
+            SceneManager.LoadScene("DG23");
         }
     }
 }

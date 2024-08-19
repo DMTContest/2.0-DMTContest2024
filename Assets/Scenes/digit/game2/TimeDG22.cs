@@ -44,7 +44,7 @@ public class TimeDG22 : MonoBehaviour
         textBox.text = "0";
         UpdateUI(); // 确保最终时间为0时也更新UI
         Debug.Log("倒计时结束！");
-        //SceneManager.LoadScene("MGTimeOver");
+        SceneManager.LoadScene("DG2TimeOver");
     }
 
     void UpdateUI()

@@ -6,18 +6,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TimeDG2 : MonoBehaviour
+public class TimeDG29 : MonoBehaviour
 {
     float local_score;//当前关卡中实时得分
 
     //单例模式需要的数据
-    public float timeStart = 60f;//从单例模式中获取从上一关卡中继承的倒计时
+    public float timeStart ;//从单例模式中获取从上一关卡中继承的倒计时
     public Text textBox;//绑定倒计时的文本
     public Text textLost;//绑定倒计时的文本
 
     // Start is called before the first frame update
     void Start()
     {
+        timeStart = DG2Instance.Time;
         TimeLostFalse();
         //倒计时系统
         StartCoroutine(CountdownRoutine());
