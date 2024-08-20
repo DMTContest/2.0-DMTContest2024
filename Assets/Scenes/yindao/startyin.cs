@@ -16,6 +16,8 @@ public class startyin : PanelManager
     [SerializeField ] GameObject Paneltip2;
     [SerializeField ] GameObject Panel7;
     [SerializeField ] GameObject Panel8;
+    public Text displayName; // 第一个显示文本的组件
+
 
     void Start()
     {
@@ -42,30 +44,45 @@ public class startyin : PanelManager
         if (Input.GetMouseButtonDown(0)) // 检查左键点击
         {
         clickCount++; // 增加点击计数器
-        if(clickCount==1){
-            OpenPanel(Panel1);
-            OpenPanel(Panel2);
-        }else if(clickCount==2){
-            OpenPanel(Panel2);
-            OpenPanel(Panel3);
-        }else if(clickCount==3){
-            OpenPanel(Panel3);
-            OpenPanel(Panel4);
-        }else if(clickCount==4){
-            OpenPanel(Panel4);
-            OpenPanel(Paneltip1);
+            if (clickCount == 1)
+            {
+                OpenPanel(Panel1);
+                OpenPanel(Panel2);
+            }
+            else if (clickCount == 2)
+            {
+                OpenPanel(Panel2);
+                OpenPanel(Panel3);
+            }
+            else if (clickCount == 3)
+            {
+                OpenPanel(Panel3);
+                OpenPanel(Panel4);
+            }
+            else if (clickCount == 4)
+            {
+                OpenPanel(Panel4);
+                OpenPanel(Paneltip1);
 
-        }else if(clickCount==12){
-            OpenPanel(Panel7);
-            OpenPanel(Panel8);
-            SceneManager.LoadScene("YindaoMain");
+            }
+            else if (clickCount == 111)
+            {
+                OpenPanel(Panel7);
+                OpenPanel(Panel8);
+            }else if(clickCount == 112) {
+                // 切换到场景3之前先保存输入数据
+                FindObjectOfType<InputHandler>().StoreInputData();
+                SceneManager.LoadScene("YindaoMain");
+            }
         }
+    
     }
-    }
+
     [SerializeField]private Image Btn_8_Image; // 用于更改Sprite的Image组件
     [SerializeField] private Sprite chosenSprite; // 选择状态下的Sprite
     [SerializeField]private Image Btn_ch8_Image; // 用于更改Sprite的Image组件
     [SerializeField] private Sprite ch8chosenSprite; // 选择状态下的Sprite
+
     public void ChooseBtn_8(){
         Btn_8_Image.sprite = chosenSprite;
     }
@@ -125,7 +142,10 @@ public class startyin : PanelManager
 
     public void Nextto7(){
         OpenPanel(Paneltip2);
+
+        displayName.text = "欢迎你!\n" + inputField1.text + "!"; // 设置第一个文本
+
         OpenPanel(Panel7);
-        clickCount = 11;
+        clickCount = 110;
     }
 }
