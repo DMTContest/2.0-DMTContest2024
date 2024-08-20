@@ -20,6 +20,9 @@ public class AG2Instance : MonoBehaviour
     public float HWrong3;
     public float HWrong4;
     public string ScoreForAnalyzeWind;
+    public float FinalScoreFromAG2;
+    public bool firstTime = true;
+
 
     private void Awake()
     {
@@ -114,7 +117,11 @@ public class AG2Instance : MonoBehaviour
         {
            ScoreForAnalyzeWind = 
         (AG2Instance.Jcorrect*10 - (AG2Instance.JWR1+AG2Instance.JWR2+AG2Instance.JWR3)*4+ AG2Instance.Mcorrect*10 - (AG2Instance.MWR1+AG2Instance.MWR2+AG2Instance.MWR3)*6+ AG2Instance.Hcorrect*10 - (AG2Instance.HWR1+AG2Instance.HWR2+AG2Instance.HWR3+AG2Instance.HWR4)*8).ToString();
+            FinalScoreFromAG2 = Jcorrect * 10 - (JWR1 + JWR2 + JWR3) * 10
+       + Mcorrect * 10 - (MWR1 + MWR2 + MWR3) * 10
+       + Hcorrect * 10 - (HWR1 + HWR2 + HWR3 + HWR4) * 10;
 
+            firstTime = false;
         }
     }
 
@@ -206,8 +213,16 @@ public class AG2Instance : MonoBehaviour
     {
         get { return instance != null ? instance.ScoreForAnalyzeWind : null; }
     }
+    public static float FinalScoreForAG2
+    {
+        get { return instance != null ? instance.FinalScoreFromAG2 : 0f; }
+    }
+    public static bool FirstTime
+    {
+        get { return instance != null ? instance.firstTime : true; }
+    }
 
-        private float GetTimeFromScene2()
+    private float GetTimeFromScene2()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
        Clock2 c = FindObjectOfType<Clock2>();

@@ -95,7 +95,7 @@ public class Clock10 : MonoBehaviour
     void SwitchToNextPage()
     {
 
-        //SceneManager.LoadScene("Final");
+        SceneManager.LoadScene("AG2Final");
 
 
       

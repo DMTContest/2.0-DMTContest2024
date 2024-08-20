@@ -294,8 +294,9 @@ GameObject:
   - component: {fileID: 701094746}
   - component: {fileID: 701094745}
   - component: {fileID: 701094744}
+  - component: {fileID: 701094747}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: Btn_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,7 +365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701094745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 701094747}
+        m_TargetAssemblyTypeName: OptionAG31, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &701094745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +416,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701094742}
   m_CullTransparentMesh: 1
+--- !u!114 &701094747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701094742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce50306cfe1344cf9b12a458c57772a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAG11: {fileID: 1057390482}
+  chosenSprite: {fileID: 21300000, guid: f32b1b8d270274184822a0f0dc23e558, type: 3}
+  unchosenSprite: {fileID: 21300000, guid: 017da839f4d83e8499d231fc71d4fd32, type: 3}
+  correct: 0
+  wrong: 0
 --- !u!1 &786280925
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +644,9 @@ GameObject:
   - component: {fileID: 920688595}
   - component: {fileID: 920688594}
   - component: {fileID: 920688593}
+  - component: {fileID: 920688596}
   m_Layer: 5
-  m_Name: Button (Legacy) (2)
+  m_Name: Btn_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,7 +715,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 920688594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 920688596}
+        m_TargetAssemblyTypeName: OptionAG31, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &920688594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +766,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920688591}
   m_CullTransparentMesh: 1
+--- !u!114 &920688596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920688591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce50306cfe1344cf9b12a458c57772a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAG11: {fileID: 1057390482}
+  chosenSprite: {fileID: 21300000, guid: 06794f288913b46b8a6b8bab8d1a6bc2, type: 3}
+  unchosenSprite: {fileID: 21300000, guid: ab1d1ae620490ef4488a26e6b6eae73d, type: 3}
+  correct: 0
+  wrong: 0
 --- !u!1 &971212278
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,8 +863,9 @@ GameObject:
   - component: {fileID: 995865982}
   - component: {fileID: 995865981}
   - component: {fileID: 995865980}
+  - component: {fileID: 995865983}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Btn_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +934,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 995865981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 995865983}
+        m_TargetAssemblyTypeName: OptionAG31, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &995865981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,6 +985,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995865978}
   m_CullTransparentMesh: 1
+--- !u!114 &995865983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995865978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce50306cfe1344cf9b12a458c57772a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAG11: {fileID: 1057390482}
+  chosenSprite: {fileID: 21300000, guid: 39134745e9b6e477ea7fd179a4bf2b64, type: 3}
+  unchosenSprite: {fileID: 21300000, guid: 8e14f67fda7f9b04389d926ae37f2423, type: 3}
+  correct: 0
+  wrong: 0
 --- !u!1 &1049801644
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057390481}
+  - component: {fileID: 1057390482}
   m_Layer: 0
   m_Name: Code (1)
   m_TagString: Untagged
@@ -1019,6 +1110,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1057390482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057390479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc3f271b3d2e459cb0d1c4d628b1c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStart: 60
+  sceneiswrong: 0
+  textBox: {fileID: 2131016931}
+  textLost: {fileID: 1478412978}
 --- !u!1 &1117587368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,51 +1745,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546844475}
   m_CullTransparentMesh: 1
---- !u!1 &1552653977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1552653979}
-  - component: {fileID: 1552653978}
-  m_Layer: 0
-  m_Name: BTN_Next
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1552653978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552653977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TatgetScene: 
---- !u!4 &1552653979
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552653977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7945787, y: -0.9828462, z: 1.9371167}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668538374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1901300662}
+  - component: {fileID: 1901300663}
   m_Layer: 0
   m_Name: DontDestroy
   m_TagString: Untagged
@@ -2039,6 +2102,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901300663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901300660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a110727c6dc4d1e9f63225259ab59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 0
+  JCorrect: 0
+  JCorrect1: 0
+  JCorrect2: 0
+  JCorrect3: 0
+  MCorrect: 0
+  MCorrect1: 0
+  MCorrect2: 0
+  MCorrect3: 0
+  HCorrect: 0
+  HCorrect1: 0
+  HCorrect2: 0
+  HCorrect3: 0
+  HCorrect4: 0
+  JWrong1: 0
+  JWrong2: 0
+  JWrong3: 0
+  MWrong1: 0
+  MWrong2: 0
+  MWrong3: 0
+  HWrong1: 0
+  HWrong2: 0
+  HWrong3: 0
+  HWrong4: 0
+  ScoreForDigitWind: 
+  FinalScoreFromAG3: 0
+  firstTime: 1
 --- !u!1 &1926755995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,8 +2309,9 @@ GameObject:
   - component: {fileID: 2063654416}
   - component: {fileID: 2063654415}
   - component: {fileID: 2063654414}
+  - component: {fileID: 2063654417}
   m_Layer: 5
-  m_Name: Button (Legacy) (3)
+  m_Name: Btn_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2277,7 +2380,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2063654415}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063654417}
+        m_TargetAssemblyTypeName: OptionAG31, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2063654415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,6 +2431,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063654412}
   m_CullTransparentMesh: 1
+--- !u!114 &2063654417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063654412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce50306cfe1344cf9b12a458c57772a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAG11: {fileID: 1057390482}
+  chosenSprite: {fileID: 21300000, guid: 3a276a14bc34c4007bd64d60d0600f4b, type: 3}
+  unchosenSprite: {fileID: 21300000, guid: d9a25398abc3d2144a0e9f9e3dc11b2d, type: 3}
+  correct: 0
+  wrong: 0
 --- !u!1 &2098488248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,7 +2491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2107456141
 GameObject:
