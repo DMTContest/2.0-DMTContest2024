@@ -7,24 +7,24 @@ using System.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AG1Final : MonoBehaviour
-{   
-    [SerializeField]private Text JS;
-    [SerializeField]private Text MS;
-    [SerializeField]private Text HS;
-    [SerializeField]private Text JR;
-    [SerializeField]private Text JW;
-    [SerializeField]private Text MR;
-    [SerializeField]private Text MW;
-    [SerializeField]private Text HR;
-    [SerializeField]private Text HW;
-    [SerializeField]private Text GameDateNow;
-    [SerializeField]private Text FinalScore;
+public class DG3Final : MonoBehaviour
+{
+    [SerializeField] private Text JS;
+    [SerializeField] private Text MS;
+    [SerializeField] private Text HS;
+    [SerializeField] private Text JR;
+    [SerializeField] private Text JW;
+    [SerializeField] private Text MR;
+    [SerializeField] private Text MW;
+    [SerializeField] private Text HR;
+    [SerializeField] private Text HW;
+    [SerializeField] private Text GameDateNow;
+    [SerializeField] private Text FinalScore;
 
-    private int clickCount=0;
+    private int clickCount = 0;
     public float FS;
 
-    public bool IfFirstTime  = true;
+    public bool IfFirstTime = true;
 
 
 
@@ -32,39 +32,46 @@ public class AG1Final : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        IfFirstTime = InstanceAG11.FirstTime;
+        IfFirstTime = InstanceDG3.FirstTime;
         HideAllUIElements(ChufenQian);
         HideAllUIElements(Chufen);
         HidePanel(DefenPanel);
         HidePanel(MedalPanel);
-        JS.text = (InstanceAG11.Jcorrect*10 - (InstanceAG11.JWR1 + InstanceAG11.JWR2 + InstanceAG11.JWR3)*10).ToString();
-        MS.text = (InstanceAG11.Mcorrect*10 - (InstanceAG11.MWR1 + InstanceAG11.MWR2 + InstanceAG11.MWR3)*10).ToString();
-        HS.text = (InstanceAG11.Hcorrect*10 - (InstanceAG11.HWR1 + InstanceAG11.HWR2 + InstanceAG11.HWR3 + InstanceAG11.HWR4)*10).ToString();
-        JR.text = InstanceAG11.Jcorrect.ToString();
-        MR.text = InstanceAG11.Mcorrect.ToString();
-        HR.text = InstanceAG11.Hcorrect.ToString();  
-        JW.text = (InstanceAG11.JWR1+ InstanceAG11.JWR2+ InstanceAG11.JWR3).ToString();
-        MW.text = (InstanceAG11.MWR1+ InstanceAG11.MWR2+ InstanceAG11.MWR3).ToString();
-        HW.text = (InstanceAG11.HWR1+ InstanceAG11.HWR2+ InstanceAG11.HWR3+ InstanceAG11.HWR4).ToString();  
+        JS.text = (InstanceDG3.Jcorrect * 10 - (InstanceDG3.JWR1 + InstanceDG3.JWR2 + InstanceDG3.JWR3) * 10).ToString();
+        MS.text = (InstanceDG3.Mcorrect * 10 - (InstanceDG3.MWR1 + InstanceDG3.MWR2 + InstanceDG3.MWR3) * 10).ToString();
+        HS.text = (InstanceDG3.Hcorrect * 10 - (InstanceDG3.HWR1 + InstanceDG3.HWR2 + InstanceDG3.HWR3 + InstanceDG3.HWR4) * 10).ToString();
+        JR.text = InstanceDG3.Jcorrect.ToString();
+        MR.text = InstanceDG3.Mcorrect.ToString();
+        HR.text = InstanceDG3.Hcorrect.ToString();
+        JW.text = (InstanceDG3.JWR1 + InstanceDG3.JWR2 + InstanceDG3.JWR3).ToString();
+        MW.text = (InstanceDG3.MWR1 + InstanceDG3.MWR2 + InstanceDG3.MWR3).ToString();
+        HW.text = (InstanceDG3.HWR1 + InstanceDG3.HWR2 + InstanceDG3.HWR3 + InstanceDG3.HWR4).ToString();
         GameDateNow.text = DateTime.Now.ToString();
         FS =
-           InstanceAG11.Jcorrect*10 - (InstanceAG11.JWR1 + InstanceAG11.JWR2 + InstanceAG11.JWR3)*10
-        + InstanceAG11.Mcorrect*10 - (InstanceAG11.MWR1 + InstanceAG11.MWR2 + InstanceAG11.MWR3)*10
-        + InstanceAG11.Hcorrect*10 - (InstanceAG11.HWR1 + InstanceAG11.HWR2 + InstanceAG11.HWR3 + InstanceAG11.HWR4)*10;
-        
-        FinalScore.text= FS.ToString();
+           InstanceDG3.Jcorrect * 10 - (InstanceDG3.JWR1 + InstanceDG3.JWR2 + InstanceDG3.JWR3) * 10
+        + InstanceDG3.Mcorrect * 10 - (InstanceDG3.MWR1 + InstanceDG3.MWR2 + InstanceDG3.MWR3) * 10
+        + InstanceDG3.Hcorrect * 10 - (InstanceDG3.HWR1 + InstanceDG3.HWR2 + InstanceDG3.HWR3 + InstanceDG3.HWR4) * 10;
+
+        FinalScore.text = FS.ToString();
         Defen.text = " 你的训练得分" + "\n" + "达到" + FS.ToString() + "分了！";
-        if(FS>=60&&FS<90){
+        if (FS >= 60 && FS < 90)
+        {
             Medal.text = "铜奖牌";
-        }else if(FS>=90&&FS<100){
+        }
+        else if (FS >= 90 && FS < 100)
+        {
             Medal.text = "银奖牌";
-        }else if(FS==100){
+        }
+        else if (FS == 100)
+        {
             Medal.text = "金奖牌";
-        }else {
+        }
+        else
+        {
             Medal.text = "入门奖牌";
         }
-        
-    }   
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -106,29 +113,29 @@ public class AG1Final : MonoBehaviour
         }
     }
 
-    [SerializeField]List<GameObject> ChufenQian = new List<GameObject>();
-    [SerializeField]List<GameObject> Chufen = new List<GameObject>();
+    [SerializeField] List<GameObject> ChufenQian = new List<GameObject>();
+    [SerializeField] List<GameObject> Chufen = new List<GameObject>();
 
     public void HideAllUIElements(List<GameObject> ChufenQian)
     {
-    foreach (GameObject element in ChufenQian)
-    {
-        element.SetActive(false);
-    }
+        foreach (GameObject element in ChufenQian)
+        {
+            element.SetActive(false);
+        }
     }
 
     public void ShowAllUIElements(List<GameObject> ChufenQian)
     {
-    foreach (GameObject element in ChufenQian)
-    {
-        element.SetActive(true);
-    }
+        foreach (GameObject element in ChufenQian)
+        {
+            element.SetActive(true);
+        }
     }
 
     [SerializeField] GameObject DefenPanel;
-    [SerializeField]public Text Defen;
+    [SerializeField] public Text Defen;
     [SerializeField] GameObject MedalPanel;
-    [SerializeField]public Text Medal;
+    [SerializeField] public Text Medal;
 
     // 隐藏 Panel
     public void HidePanel(GameObject DefenPanel)
@@ -142,7 +149,8 @@ public class AG1Final : MonoBehaviour
         DefenPanel.SetActive(true);
     }
 
-    public void Yindao(){
+    public void Yindao()
+    {
         HidePanel(MedalPanel);
         SceneManager.LoadScene("YindaoFinalMain");
     }

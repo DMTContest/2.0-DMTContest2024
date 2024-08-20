@@ -104,10 +104,10 @@ public class DG2Final : MonoBehaviour
         else
         {
 
-            ShowAllUIElements(ChufenQian);
+            //ShowAllUIElements(ChufenQian);
             if (Input.GetMouseButtonDown(0)) // 检查左键点击
             {
-                HideAllUIElements(ChufenQian);
+                //HideAllUIElements(ChufenQian);
                 ShowAllUIElements(Chufen);
             }
         }
