@@ -649,7 +649,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1049801644
 GameObject:
@@ -756,7 +756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117587368
 GameObject:
@@ -920,7 +920,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1196397222}
   - component: {fileID: 1196397224}
-  - component: {fileID: 1196397223}
   - component: {fileID: 1196397225}
   m_Layer: 0
   m_Name: Balloon2
@@ -937,37 +936,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196397221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.263946}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.8, y: 0.37, z: 1.263946}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1496369659}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1196397223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196397221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33da7fbf8f64d2f4cb696811078d1401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 2
-  startPosition: {x: 1, y: -10, z: 0}
-  initialRate: 0.05
-  decayRate: 5
-  timeInterval: 0.01
-  maxScale: 4
-  initialScale: {x: 0, y: 0, z: 0}
-  thresholdScale: 2
-  moveAmplitudeX: 1
-  moveAmplitudeY: 0.05
-  moveFrequency: 0.1
-  rotationSpeed: 5
 --- !u!212 &1196397224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1010,7 +985,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81d7330cf91915545a69826887a05dd5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.56078434}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1290,7 +1265,7 @@ RectTransform:
   - {fileID: 1237176339}
   - {fileID: 1957176493}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1426,7 +1401,7 @@ Transform:
   - {fileID: 1196397222}
   - {fileID: 1952938895}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606346576
 GameObject:
@@ -1438,7 +1413,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1606346577}
   - component: {fileID: 1606346579}
-  - component: {fileID: 1606346578}
   - component: {fileID: 1606346580}
   m_Layer: 0
   m_Name: Balloon1
@@ -1455,37 +1429,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606346576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.263946}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.8, y: -1.1, z: 1.263946}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1496369659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1606346578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606346576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33da7fbf8f64d2f4cb696811078d1401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 1
-  startPosition: {x: 1, y: -10, z: 0}
-  initialRate: 0.05
-  decayRate: 5
-  timeInterval: 0.01
-  maxScale: 3
-  initialScale: {x: 0, y: -2, z: 0}
-  thresholdScale: 1.2
-  moveAmplitudeX: -1.5
-  moveAmplitudeY: 0
-  moveFrequency: 0.1
-  rotationSpeed: 20
 --- !u!212 &1606346579
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1528,7 +1478,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc5ec1580116e024881daa2f7dcee293, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.56078434}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1872,7 +1822,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952938894
 GameObject:
@@ -1884,7 +1834,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1952938895}
   - component: {fileID: 1952938897}
-  - component: {fileID: 1952938896}
   - component: {fileID: 1952938898}
   m_Layer: 0
   m_Name: Balloon3
@@ -1901,37 +1850,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952938894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.263946}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 2.73, y: -1.47, z: 1.263946}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1496369659}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1952938896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952938894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33da7fbf8f64d2f4cb696811078d1401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 3
-  startPosition: {x: 1, y: -10, z: 0}
-  initialRate: 0.05
-  decayRate: 5
-  timeInterval: 0.01
-  maxScale: 4
-  initialScale: {x: 0, y: 0, z: 0}
-  thresholdScale: 2
-  moveAmplitudeX: -0.5
-  moveAmplitudeY: -1
-  moveFrequency: 0.1
-  rotationSpeed: -10
 --- !u!212 &1952938897
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1974,7 +1899,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 391c00f89766bae45a7e9a1cb2a6437a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.56078434}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
