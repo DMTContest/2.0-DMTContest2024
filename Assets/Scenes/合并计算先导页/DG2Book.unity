@@ -430,9 +430,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 118288794}
-        m_TargetAssemblyTypeName: BtnBack, Assembly-CSharp
-        m_MethodName: PanelToNext
+      - m_Target: {fileID: 1868532478}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnBtnNewClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -489,10 +489,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 118288788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5332454af0c40158c786aaac030845, type: 3}
+  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClosePanel: {fileID: 1165427641}
+  TatgetScene: Review
 --- !u!1 &154062247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,7 +3057,7 @@ GameObject:
   - component: {fileID: 1415886493}
   - component: {fileID: 1415886492}
   - component: {fileID: 1415886491}
-  - component: {fileID: 1415886490}
+  - component: {fileID: 1415886494}
   m_Layer: 5
   m_Name: Btn_back
   m_TagString: Untagged
@@ -3085,19 +3085,6 @@ RectTransform:
   m_AnchoredPosition: {x: -875, y: 383}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1415886490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415886488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5332454af0c40158c786aaac030845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ClosePanel: {fileID: 172429295}
 --- !u!114 &1415886491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,9 +3129,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1415886490}
-        m_TargetAssemblyTypeName: BtnBack, Assembly-CSharp
-        m_MethodName: PanelToNext
+      - m_Target: {fileID: 1868532478}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnBtnNewClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3192,6 +3179,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415886488}
   m_CullTransparentMesh: 1
+--- !u!114 &1415886494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415886488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TatgetScene: Review
 --- !u!1 &1425881389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,9 +3846,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1519274913}
-        m_TargetAssemblyTypeName: BtnBack, Assembly-CSharp
-        m_MethodName: PanelToNext
+      - m_Target: {fileID: 1868532478}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnBtnNewClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3905,10 +3905,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1519274908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5332454af0c40158c786aaac030845, type: 3}
+  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClosePanel: {fileID: 1077478400}
+  TatgetScene: Review
 --- !u!1 &1561119704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4947,8 +4947,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1868532478}
-        m_TargetAssemblyTypeName: BtnBack, Assembly-CSharp
-        m_MethodName: PanelToNext
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnBtnNewClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5005,10 +5005,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1868532473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5332454af0c40158c786aaac030845, type: 3}
+  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClosePanel: {fileID: 1511460432}
+  TatgetScene: Review
 --- !u!1 &1987539777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5245,9 +5245,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2086528606}
-        m_TargetAssemblyTypeName: BtnBack, Assembly-CSharp
-        m_MethodName: PanelToNext
+      - m_Target: {fileID: 1868532478}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnBtnNewClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5304,10 +5304,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2086528600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5332454af0c40158c786aaac030845, type: 3}
+  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClosePanel: {fileID: 1332113682}
+  TatgetScene: Review
 --- !u!1 &2127861879
 GameObject:
   m_ObjectHideFlags: 0

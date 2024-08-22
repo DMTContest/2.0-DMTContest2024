@@ -51,21 +51,28 @@ public class FinalClass : MonoBehaviour
         FinalScore.text = FS.ToString();
 
         Defen.text = " 你的训练得分" + "\n" + "达到" + FS.ToString() + "分了！";
-        if (FS >= 60 && FS < 90)
+        if (FS >= 60 && FS < 80)
         {
-            Medal.text = "铜奖牌";
+            Medal.text = "鱼鱼奖牌";
+            GlobalStorage.instance.FishMedal += 1;
         }
-        else if (FS >= 90 && FS < 100)
+        else if (FS >= 80 && FS < 100)
         {
-            Medal.text = "银奖牌";
+            Medal.text = "熊熊勋章";
+            GlobalStorage.instance.BearMedal += 1;
+
         }
         else if (FS == 100)
         {
-            Medal.text = "金奖牌";
+            Medal.text = "熊熊勋章";
+            GlobalStorage.instance.BearMedal += 1;
+
         }
         else
         {
-            Medal.text = "入门奖牌";
+            Medal.text = "鱼鱼奖牌";
+            GlobalStorage.instance.FishMedal += 1;
+
         }
     }   
 
