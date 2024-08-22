@@ -44,7 +44,7 @@ public class YindaoDigitWind : PanelManager
 
     public void GoToYindaoDigitWind(){
          OpenPanel(Panel2);
-        SceneManager.LoadScene("YindaoBook");
+        SceneManager.LoadScene("YindaoGame");
     }
     }
    

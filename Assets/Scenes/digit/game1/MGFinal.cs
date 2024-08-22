@@ -54,14 +54,14 @@ public class MGFinal : MonoBehaviour
         
         FinalScore.text= FS.ToString();
         Defen.text = " 你的训练得分" + "\n" + "达到" + FS.ToString() + "分了！";
-        if(FS>=60&&FS<90){
-            Medal.text = "铜奖牌";
-        }else if(FS>=90&&FS<100){
-            Medal.text = "银奖牌";
+        if(FS>=60&&FS<80){
+            Medal.text = "兔兔奖牌";
+        }else if(FS>=80&&FS<100){
+            Medal.text = "小兔勋章";
         }else if(FS==100){
-            Medal.text = "金奖牌";
+            Medal.text = "小兔勋章";
         }else {
-            Medal.text = "入门奖牌";
+            Medal.text = "兔兔奖牌";
         }
         
     }   

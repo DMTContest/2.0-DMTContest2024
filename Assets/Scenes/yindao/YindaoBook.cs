@@ -19,18 +19,14 @@ public class YindaoBook : PanelManager
 
     private int Btn_clickCount = 2;
 
-    public Text displayName; // 第一个显示文本的组件
-    public Text displaySlogan; // 第二个显示文本的组件
-    [SerializeField] Image head;
+
 
 
     void Start()
     {
         // 初始化时关闭所有面板
         CloseAllPanels();
-        displayName.text = GlobalStorage.instance.inputName; // 设置第一个文本
-        displaySlogan.text = GlobalStorage.instance.inputSlogan; // 设置第二个文本
-        head.sprite = GlobalStorage.HeadImage;
+
 
     }
 
@@ -85,11 +81,7 @@ public class YindaoBook : PanelManager
                 OpenPanel(Panel8);
                 Btn_clickCount++;
             }
-            else if (Btn_clickCount == 8)
-            {
-                OpenPanel(Panel8);
-                SceneManager.LoadScene("MG11");
-            }
+
         }
     }
 
@@ -108,6 +100,11 @@ public class YindaoBook : PanelManager
         Panel6.SetActive(false);
         Panel7.SetActive(false);
         Panel8.SetActive(false);
+    }
+    public void GotoGame()
+    {
+        OpenPanel(Panel8);
+        SceneManager.LoadScene("MG11");
     }
 
 }
