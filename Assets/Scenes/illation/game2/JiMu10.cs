@@ -144,9 +144,12 @@ public class JiMu10 : MonoBehaviour
     public void OnButtonClickH()
     {
 
-        isChoose = false;
+        // ÇÐ»»Ñ¡Ôñ×´Ì¬
+        isChoose = !isChoose;
+
         // ¼ì²é´ð°¸
         CheckAnswer();
+       
     }
     public void OnButtonClickI()
     {
@@ -163,9 +166,7 @@ public class JiMu10 : MonoBehaviour
     }
     public void OnButtonClickK()
     {
-        // ÇÐ»»Ñ¡Ôñ×´Ì¬
-        isChoose = !isChoose;
-
+        isChoose = false;
         // ¼ì²é´ð°¸
         CheckAnswer();
     }
@@ -187,16 +188,16 @@ public class JiMu10 : MonoBehaviour
             EOption.isChoose == false &&
             FOption.isChoose == false &&
             GOption.isChoose == false &&
-            HOption.isChoose == false &&
+            HOption.isChoose == true &&
             IOption.isChoose == false &&
             JOption.isChoose == false &&
-            KOption.isChoose == true &&
+            KOption.isChoose == false &&
             LOption.isChoose == false)
 
         {
             Debug.Log("´ð¶ÔÀ²!");
-            KOption.correct = 1;
-            TG2Instance.instance.HCorrect4 = KOption.correct;
+            HOption.correct = 1;
+            TG2Instance.instance.HCorrect4 = HOption.correct;
             SceneManager.LoadScene("JGFinal");
         }
         else

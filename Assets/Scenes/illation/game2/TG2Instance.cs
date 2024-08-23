@@ -602,9 +602,9 @@ public class TG2Instance : MonoBehaviour
     private float GetCorrectFromScene10()
     {
 
-        GameObject OK = GameObject.Find("Button-1 (10)");
+        GameObject OH = GameObject.Find("Button-1 (7)");
 
-        JiMu10 c = OK.GetComponent<JiMu10>();
+        JiMu10 c = OH.GetComponent<JiMu10>();
         if (c != null)
         {
             return c.correct;
