@@ -1490,7 +1490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8C03\u6574\u65F6\u95F4"
+  m_Text: "\u8BA4\u8BC6\u65F6\u95F4"
 --- !u!222 &913873590
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2045,6 +2045,8 @@ GameObject:
   - component: {fileID: 1181510446}
   - component: {fileID: 1181510445}
   - component: {fileID: 1181510444}
+  - component: {fileID: 1181510448}
+  - component: {fileID: 1181510447}
   m_Layer: 5
   m_Name: Btn_HeadBg
   m_TagString: Untagged
@@ -2118,7 +2120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1181510445}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1181510448}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnBtnNewClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1181510445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,6 +2171,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181510442}
   m_CullTransparentMesh: 1
+--- !u!114 &1181510447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181510442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57139b630dc6a494087e86f030ffd88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 858249649}
+  displayName: {fileID: 1325809762}
+  displaySlogan: {fileID: 1198094425}
+--- !u!114 &1181510448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181510442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1181d702f65f4147a6df52f4a94179c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TatgetScene: Mine
 --- !u!1 &1198094423
 GameObject:
   m_ObjectHideFlags: 0

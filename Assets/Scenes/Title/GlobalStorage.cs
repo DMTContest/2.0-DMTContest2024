@@ -13,6 +13,19 @@ public class GlobalStorage : MonoBehaviour
     public string inputName;
     public string inputSlogan;
 
+    public float TutuMedal = 0;
+    public float CarrotMedal = 0;
+
+    public float BearMedal = 0;
+    public float FishMedal = 0;
+
+    public float BirdMedal = 0;
+    public float FruitMedal = 0;
+
+    public float DeerMedal = 0;
+    public float FlowerMedal = 0;
+
+
     private void Awake()
     {
         // 确保只有一个 SceneTransition 实例

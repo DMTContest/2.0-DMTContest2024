@@ -54,21 +54,28 @@ public class DG3Final : MonoBehaviour
 
         FinalScore.text = FS.ToString();
         Defen.text = " 你的训练得分" + "\n" + "达到" + FS.ToString() + "分了！";
-        if (FS >= 60 && FS < 90)
+        if (FS >= 60 && FS < 80)
         {
-            Medal.text = "铜奖牌";
+            Medal.text = "胡萝卜奖牌";
+            GlobalStorage.instance.CarrotMedal += 1;
         }
-        else if (FS >= 90 && FS < 100)
+        else if (FS >= 80 && FS < 100)
         {
-            Medal.text = "银奖牌";
+            Medal.text = "兔兔勋章";
+            GlobalStorage.instance.TutuMedal += 1;
+
         }
         else if (FS == 100)
         {
-            Medal.text = "金奖牌";
+            Medal.text = "兔兔勋章";
+            GlobalStorage.instance.TutuMedal += 1;
+
         }
         else
         {
-            Medal.text = "入门奖牌";
+            Medal.text = "胡萝卜奖牌";
+            GlobalStorage.instance.CarrotMedal += 1;
+
         }
 
     }
