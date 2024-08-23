@@ -6,106 +6,203 @@ using UnityEngine.UI;
 
 public class JiMu1 : MonoBehaviour
 {
-    public Countdown countdown;
-    public Button button1;
-    public Button button2;
-    public Button button3;
-    public Button button4;
-    public Button button5;
-    public Button button6;
-    public Button button7;
-    public Button button8;
-    public Button button9;
-    public Button button10;
-    public Button button11;
-    public Button button12;
+    private bool isChoose = false;
+    public TimeJG1 timeJG1; // 倒计时管理器的引用
+    private JiMu1 AOption; // 00选项的脚本引用
+    private JiMu1 BOption; // 01选项的脚本引用
+    private JiMu1 COption; // 10选项的脚本引用
+    private JiMu1 DOption; // 00选项的脚本引用
+    private JiMu1 EOption; // 01选项的脚本引用
+    private JiMu1 FOption; // 10选项的脚本引用
+    private JiMu1 GOption; // 00选项的脚本引用
+    private JiMu1 HOption; // 01选项的脚本引用
+    private JiMu1 IOption; // 10选项的脚本引用
+    private JiMu1 JOption; // 00选项的脚本引用
+    private JiMu1 KOption; // 01选项的脚本引用
+    private JiMu1 LOption; // 10选项的脚本引用
 
-    void Start()
+    public float correct = 0;
+    public float wrong = 0;
+    private JiMu1 CorrectAnswer;
+    private JiMu1 WrongAnswer1;
+    private JiMu1 WrongAnswer2;
+    private JiMu1 WrongAnswer3;
+    private JiMu1 WrongAnswer4;
+    private JiMu1 WrongAnswer5;
+    private JiMu1 WrongAnswer6;
+    private JiMu1 WrongAnswer7;
+    private JiMu1 WrongAnswer8;
+    private JiMu1 WrongAnswer9;
+    private JiMu1 WrongAnswer10;
+    private JiMu1 WrongAnswer11;
+    private JiMu1 WrongAnswer12;
+    private void Start()
     {
-        button1.onClick.AddListener(OnClick1);
-        button2.onClick.AddListener(OnClick2);
-        button3.onClick.AddListener(OnClick3);
-        button4.onClick.AddListener(OnClick4);
-        button5.onClick.AddListener(OnClick5);
-        button6.onClick.AddListener(OnClick6);
-        button7.onClick.AddListener(OnClick7);
-        button8.onClick.AddListener(OnClick8);
-        button9.onClick.AddListener(OnClick9);
-        button10.onClick.AddListener(OnClick10);
-        button11.onClick.AddListener(OnClick11);
-        button12.onClick.AddListener(OnClick12);
+        //Debug.Log("正在调用答案检查器");
+
+        // 获取当前Button的Image组件
+
+
+        // 获得选项的脚本引用——
+        GameObject OA = GameObject.Find("Button-1");
+
+        AOption = OA.GetComponent<JiMu1>();
+
+        GameObject OB = GameObject.Find("Button-1 (1)");
+
+        BOption = OB.GetComponent<JiMu1>();
+
+        GameObject OC = GameObject.Find("Button-1 (2)");
+
+        COption = OC.GetComponent<JiMu1>();
+        GameObject OD = GameObject.Find("Button-1 (3)");
+
+        DOption = OD.GetComponent<JiMu1>();
+        GameObject OE = GameObject.Find("Button-1 (4)");
+
+        EOption = OE.GetComponent<JiMu1>();
+
+        GameObject OF = GameObject.Find("Button-1 (5)");
+
+        FOption = OF.GetComponent<JiMu1>();
+
+        GameObject OG = GameObject.Find("Button-1 (6)");
+
+        GOption = OG.GetComponent<JiMu1>();
+        GameObject OH = GameObject.Find("Button-1 (7)");
+
+        HOption = OH.GetComponent<JiMu1>();
+
+        GameObject OI = GameObject.Find("Button-1 (8)");
+
+        IOption = OI.GetComponent<JiMu1>();
+
+        GameObject OJ = GameObject.Find("Button-1 (9)");
+
+        JOption = OJ.GetComponent<JiMu1>();
+        GameObject OK = GameObject.Find("Button-1 (10)");
+
+        KOption = OK.GetComponent<JiMu1>();
+        GameObject OL = GameObject.Find("Button-1 (11)");
+
+        LOption = OL.GetComponent<JiMu1>();
+        //Debug.Log("已经引用12个选项脚本");
+
+
     }
 
-    public void OnClick1()
+    public void OnButtonClickA()
     {
-        countdown.ReduceTime(10f); // 选择A时减少10秒倒计时
-        Debug.Log("选择了1，当前倒计时：" + countdown.timeStart);
+
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
+    }
+    public void OnButtonClickB()
+    {
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
 
-    public void OnClick2()
+    public void OnButtonClickC()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了2，当前倒计时：" + countdown.timeStart);
-    }
 
-    public void OnClick3()
-    {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了3，当前倒计时：" + countdown.timeStart);
+        // 切换选择状态
+        isChoose = !isChoose;
+       
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick4()
+    public void OnButtonClickD()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了4，当前倒计时：" + countdown.timeStart);
-    }
-    public void OnClick5()
-    {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了5，当前倒计时：" + countdown.timeStart);
-    }
-    public void OnClick6()
-    {
-        // 选择6时切换到下一个页面
-        SwitchToNextPage();
 
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick7()
+    public void OnButtonClickE()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了7，当前倒计时：" + countdown.timeStart);
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick8()
+    public void OnButtonClickF()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了8，当前倒计时：" + countdown.timeStart);
+
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick9()
+    public void OnButtonClickG()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了9，当前倒计时：" + countdown.timeStart);
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick10()
+    public void OnButtonClickH()
     {
-        countdown.ReduceTime(10f); // 选择10时减少10秒倒计时
-        Debug.Log("选择了3，当前倒计时：" + countdown.timeStart);
+
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick11()
+    public void OnButtonClickI()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了11，当前倒计时：" + countdown.timeStart);
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    public void OnClick12()
+    public void OnButtonClickJ()
     {
-        countdown.ReduceTime(10f); // 选择B时减少10秒倒计时
-        Debug.Log("选择了12，当前倒计时：" + countdown.timeStart);
+
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
     }
-    void SwitchToNextPage()
+    public void OnButtonClickK()
     {
-        Debug.Log("切换到下一个页面");
-        // 在这里实现切换页面的具体逻辑，例如加载新场景或者显示另一个UI界面
-        // 例如，可以使用 Unity 的场景管理器加载新场景：
-        SceneManager.LoadScene("JiMu2");
-        // 或者显示另一个UI界面：
-        // nextUIPanel.SetActive(true);
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
+    }
+    public void OnButtonClickL()
+    {
+
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
+    }
+    private void CheckAnswer()
+    {
+
+
+        if (AOption.isChoose == false &&
+            BOption.isChoose == false &&
+            COption.isChoose == true &&
+            DOption.isChoose == false &&
+            EOption.isChoose == false &&
+            FOption.isChoose == false &&
+            GOption.isChoose == false &&
+            HOption.isChoose == false &&
+            IOption.isChoose == false &&
+            JOption.isChoose == false &&
+            KOption.isChoose == false &&
+            LOption.isChoose == false)
+
+        {
+            Debug.Log("答对啦!");
+            COption.correct = 1;
+            TG2Instance.instance.JCorrect1 = COption.correct;
+            SceneManager.LoadScene("JiMu2");
+        }
+        else
+        {
+            Debug.Log("答错啦!");
+
+            timeJG1.ReduceTime(10f);
+
+            AOption.wrong += 1;
+        }
     }
 }

@@ -7,7 +7,7 @@ public class ButtonManager : MonoBehaviour, IPointerClickHandler
 {
     public Button[] buttons; // 按钮数组
     private bool[] buttonStates; // 按钮状态数组
-    public Countdown countdown; // 引用到 Countdown 脚本
+    public TimeFG1 timeFG1; // 引用到 Countdown 脚本
 
     void Start()
     {
@@ -47,9 +47,9 @@ public class ButtonManager : MonoBehaviour, IPointerClickHandler
         if (!isButton)
         {
             // Reduce time by 10 seconds
-            if (countdown != null)
+            if (timeFG1 != null)
             {
-                countdown.ReduceTime(10f);
+                timeFG1.ReduceTime(10f);
             }
         }
     }

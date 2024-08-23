@@ -1,75 +1,115 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class pintu1 : MonoBehaviour
 {
-    public Countdown countdown;
-    public Button[] choiceButtons; // 选择按钮数组
-    public Image silhouetteImage1; // 第一个剪影图片
-    public Image silhouetteImage2; // 第二个剪影图片
-    public Image silhouetteImage3; // 第三个剪影图片
-    public Image silhouetteImage4; // 第四个剪影图片
+    private bool isChoose = false;
+    private pintu1 AOption; // 00选项的脚本引用
+    private pintu1 BOption; // 01选项的脚本引用
+    private pintu1 COption; // 10选项的脚本引用
+    private pintu1 DOption; // 11选项的脚本引用
 
-    private int correctButtonIndex1 = 0; // 第一个正确按钮的索引
-    private int correctButtonIndex2 = 1; // 第二个正确按钮的索引
-    private int correctButtonIndex3 = 3; // 第三个正确按钮的索引
-    private int correctButtonIndex4 = 5; // 第四个正确按钮的索引
+    public Image targetImage1; // 添加对目标Image的引用
+    public Image targetImage2; // 添加对目标Image的引用
 
-    private bool buttonClicked1 = false; // 记录第一个按钮是否被点击
-    private bool buttonClicked2 = false; // 记录第二个按钮是否被点击
-    private bool buttonClicked3 = false; // 记录第三个按钮是否被点击
-    private bool buttonClicked4 = false; // 记录第四个按钮是否被点击
-
-    void Start()
+    public float correct;
+    public float wrong;
+    public TimePG1 timePG1;
+    private void Start()
     {
-        // 添加点击事件监听器
-        for (int i = 0; i < choiceButtons.Length; i++)
+
+        // 获得选项的脚本引用
+        GameObject OA = GameObject.Find("Button-1");
+        AOption = OA.GetComponent<pintu1>();
+
+        GameObject OB = GameObject.Find("Button-2");
+        BOption = OB.GetComponent<pintu1>();
+
+        GameObject OC = GameObject.Find("Button-3");
+        COption = OC.GetComponent<pintu1>();
+
+        GameObject OD = GameObject.Find("Button-4");
+        DOption = OD.GetComponent<pintu1>();
+        // 获得选项的脚本引用
+        //Debug.Log("已经引用四个选项脚本");
+    }
+    public void OnButtonClickB()
+    {
+
+        // 切换选择状态
+        isChoose = !isChoose;
+        // 检查答案
+        CheckAnswer();
+        // 修改Image颜色
+        if (targetImage1 != null)
         {
-            int index = i; // 保存当前索引以便在闭包中使用
-            choiceButtons[i].onClick.AddListener(() => OnChoiceButtonClicked(index));
+            targetImage2.color = Color.green; // 将颜色设置为绿色
+        }
+    }
+    public void OnButtonClickA()
+    {
+
+        // 切换选择状态
+        isChoose = !isChoose;
+        // 检查答案
+        CheckAnswer();
+        // 修改Image颜色
+        if (targetImage1 != null)
+        {
+            targetImage1.color = Color.green; // 将颜色设置为绿色
         }
     }
 
-    void OnChoiceButtonClicked(int buttonIndex)
+    public void OnButtonClickC()
     {
-        // 判断点击的按钮是否是正确的按钮
-        if (buttonIndex == correctButtonIndex1)
+
+
+        // 检查答案
+        CheckAnswer();
+
+        timePG1.ReduceTime(10f);
+
+        isChoose = false;
+        // 检查答案
+    }
+    public void OnButtonClickD()
+    {
+        timePG1.ReduceTime(10f);
+
+        isChoose = false;
+        // 检查答案
+        CheckAnswer();
+        // 修改Image颜色
+
+
+    }
+    private void CheckAnswer()
+    {
+        //Debug.Log("正在调用答案检查器");
+        pintu1 CorrectOption1 = AOption;
+        pintu1 CorrectOption2 = COption;
+
+        pintu1 WrongOption1 = BOption;
+        pintu1 WrongOption2 = DOption;
+
+        if (CorrectOption1.isChoose == true &&
+            CorrectOption2.isChoose == true &&
+            WrongOption1.isChoose == false &&
+            WrongOption2.isChoose == false)
         {
-            silhouetteImage1.color = Color.green; // 假设正确时剪影变白色
-            buttonClicked1 = true;
-        }
-        else if (buttonIndex == correctButtonIndex2)
-        {
-            silhouetteImage2.color = Color.green; // 假设正确时剪影变白色
-            buttonClicked2 = true;
-        }
-        else if (buttonIndex == correctButtonIndex3)
-        {
-            silhouetteImage3.color = Color.green; // 假设正确时剪影变白色
-            buttonClicked3 = true;
-        }
-        else if (buttonIndex == correctButtonIndex4)
-        {
-            silhouetteImage4.color = Color.green; // 假设正确时剪影变白色
-            buttonClicked4 = true;
+            Debug.Log("答对啦!");
+            AOption.correct = 1;
+            SceneManager.LoadScene("pintu2");
         }
         else
         {
-            countdown.ReduceTime(10f);
-        }
+            Debug.Log("答错啦!");
 
-        CheckAllButtonsClicked();
-    }
 
-    void CheckAllButtonsClicked()
-    {
-        if (buttonClicked1 && buttonClicked2 && buttonClicked3 && buttonClicked4)
-        {
-            // 所有目标按钮都被点击了，进行页面跳转
-            SceneManager.LoadScene("Pintu2"); // 替换成你的目标场景名称
+            COption.wrong += 1;
+
+
         }
     }
 }
