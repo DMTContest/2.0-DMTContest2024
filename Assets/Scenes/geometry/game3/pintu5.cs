@@ -57,6 +57,7 @@ public class pintu5 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG5.ReduceTime(10f);
+        BOption.wrong += 1;
 
     }
     public void OnButtonClickA()
@@ -105,7 +106,7 @@ public class pintu5 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG5.ReduceTime(10f);
-
+        BOption.wrong += 1;
 
 
     }
@@ -129,6 +130,7 @@ public class pintu5 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         // 修改Image颜色
+        BOption.wrong += 1;
 
     }
     public void OnButtonClickH()
@@ -139,7 +141,7 @@ public class pintu5 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         // 修改Image颜色
-
+        BOption.wrong += 1;
 
     }
     private void CheckAnswer()
@@ -182,7 +184,7 @@ public class pintu5 : MonoBehaviour
         {
             Debug.Log("答错啦!");
 
-            BOption.wrong += 1;
+
 
 
         }

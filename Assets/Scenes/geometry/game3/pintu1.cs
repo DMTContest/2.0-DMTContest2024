@@ -69,14 +69,14 @@ public class pintu1 : MonoBehaviour
         CheckAnswer();
 
         timePG1.ReduceTime(10f);
-
+        DOption.wrong += 1;
         isChoose = false;
         // ¼ì²é´ð°¸
     }
     public void OnButtonClickD()
     {
         timePG1.ReduceTime(10f);
-
+        DOption.wrong += 1;
         isChoose = false;
         // ¼ì²é´ð°¸
         CheckAnswer();
@@ -105,10 +105,6 @@ public class pintu1 : MonoBehaviour
         else
         {
             Debug.Log("´ð´íÀ²!");
-
-
-            COption.wrong += 1;
-
 
         }
     }

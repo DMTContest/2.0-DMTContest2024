@@ -65,6 +65,7 @@ public class pintu4 : MonoBehaviour
     {
 
 
+        COption.wrong += 1;
         // 检查答案
         CheckAnswer();
 
@@ -81,6 +82,8 @@ public class pintu4 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         // 修改Image颜色
+
+        COption.wrong += 1;
 
 
     }
@@ -107,7 +110,6 @@ public class pintu4 : MonoBehaviour
             Debug.Log("答错啦!");
 
 
-            COption.wrong += 1;
 
 
         }

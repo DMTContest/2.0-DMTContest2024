@@ -65,6 +65,7 @@ public class pintu10 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG10.ReduceTime(10f);
+        AOption.wrong += 1;
 
     }
 
@@ -74,6 +75,7 @@ public class pintu10 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG10.ReduceTime(10f);
+        AOption.wrong += 1;
 
     }
     public void OnButtonClickD()
@@ -97,6 +99,7 @@ public class pintu10 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG10.ReduceTime(10f);
+        AOption.wrong += 1;
     }
 
     public void OnButtonClickF()
@@ -119,6 +122,7 @@ public class pintu10 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG10.ReduceTime(10f);
+        AOption.wrong += 1;
     }
     public void OnButtonClickH()
     {
@@ -145,7 +149,7 @@ public class pintu10 : MonoBehaviour
         pintu10 WrongOption1 = AOption;
         pintu10 WrongOption2 = BOption;
         pintu10 WrongOption3 = COption;
-        pintu10 WrongOption4 = DOption;
+        pintu10 WrongOption4 = EOption;
         pintu10 WrongOption5 = GOption;
 
         if (CorrectOption1.isChoose == true &&
@@ -164,9 +168,7 @@ public class pintu10 : MonoBehaviour
         else
         {
             Debug.Log("答错啦!");
-
-
-            AOption.wrong += 1;
+           
 
 
         }

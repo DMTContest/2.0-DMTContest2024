@@ -113,7 +113,7 @@ public class GG3Instance : MonoBehaviour
             _time = GetTimeFromTG1Scene10();
             HWrong4 = GetWrongNumFromScene10();
         }
-        if (SceneManager.GetActiveScene().name == "XGFinal")
+        if (SceneManager.GetActiveScene().name == "PGFinal")
         {
             ScoreForDigitWind =
          (
@@ -147,7 +147,7 @@ public class GG3Instance : MonoBehaviour
     }
     private float GetWrongNumFromScene1()
     {
-        GameObject OB = GameObject.Find("Button-2");
+        GameObject OB = GameObject.Find("Button-4");
 
         pintu1 c = OB.GetComponent<pintu1>();
 
@@ -508,7 +508,7 @@ public class GG3Instance : MonoBehaviour
     }
     private float GetWrongNumFromScene8()
     {
-        GameObject OB = GameObject.Find("Button-2");
+        GameObject OB = GameObject.Find("Button-1");
 
         pintu8 c = OB.GetComponent<pintu8>();
         if (c != null)
@@ -523,7 +523,7 @@ public class GG3Instance : MonoBehaviour
     private float GetCorrectFromScene8()
     {
 
-        GameObject OA = GameObject.Find("Button-1");
+        GameObject OA = GameObject.Find("Button-3");
 
         pintu8 c = OA.GetComponent<pintu8>();
         if (c != null)
@@ -549,7 +549,7 @@ public class GG3Instance : MonoBehaviour
     }
     private float GetWrongNumFromScene9()
     {
-        GameObject OE = GameObject.Find("Button-5");
+        GameObject OE = GameObject.Find("Button-4");
 
         pintu9 c = OE.GetComponent<pintu9>();
         if (c != null)
@@ -563,7 +563,7 @@ public class GG3Instance : MonoBehaviour
     }
     private float GetCorrectFromScene9()
     {
-        GameObject OA = GameObject.Find("Button-1");
+        GameObject OA = GameObject.Find("Button-5");
 
         pintu9 c = OA.GetComponent<pintu9>();
         if (c != null)
@@ -589,7 +589,7 @@ public class GG3Instance : MonoBehaviour
     }
     private float GetWrongNumFromScene10()
     {
-        GameObject OA = GameObject.Find("Button-1");
+        GameObject OA = GameObject.Find("Button-5");
 
         pintu10 c = OA.GetComponent<pintu10>();
 

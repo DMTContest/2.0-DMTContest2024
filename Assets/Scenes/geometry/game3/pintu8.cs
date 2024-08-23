@@ -56,6 +56,7 @@ public class pintu8 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG8.ReduceTime(10f);
+        AOption.wrong += 1;
 
     }
     public void OnButtonClickB()
@@ -91,6 +92,7 @@ public class pintu8 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG8.ReduceTime(10f);
+        AOption.wrong += 1;
 
     }
     public void OnButtonClickE()
@@ -100,6 +102,7 @@ public class pintu8 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG8.ReduceTime(10f);
+        AOption.wrong += 1;
 
     }
 
@@ -124,6 +127,7 @@ public class pintu8 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timePG8.ReduceTime(10f);
+        AOption.wrong += 1;
     }
     public void OnButtonClickH()
     {
@@ -134,7 +138,7 @@ public class pintu8 : MonoBehaviour
         CheckAnswer();
         // 修改Image颜色
 
-
+        AOption.wrong += 1;
     }
     private void CheckAnswer()
     {
@@ -160,15 +164,12 @@ public class pintu8 : MonoBehaviour
             WrongOption2.isChoose == false)
         {
             Debug.Log("答对啦!");
-            BOption.correct = 1;
+            COption.correct = 1;
             SceneManager.LoadScene("pintu9");
         }
         else
         {
             Debug.Log("答错啦!");
-
-
-            AOption.wrong += 1;
 
 
         }

@@ -71,6 +71,7 @@ public class pintu3 : MonoBehaviour
         timePG3.ReduceTime(10f);
 
         isChoose = false;
+        AOption.wrong += 1;
         // 检查答案
     }
     public void OnButtonClickB()
@@ -80,6 +81,7 @@ public class pintu3 : MonoBehaviour
         isChoose = false;
         // 检查答案
         CheckAnswer();
+        AOption.wrong += 1;
         // 修改Image颜色
 
 
@@ -107,7 +109,7 @@ public class pintu3 : MonoBehaviour
             Debug.Log("答错啦!");
 
 
-            AOption.wrong += 1;
+     
 
 
         }

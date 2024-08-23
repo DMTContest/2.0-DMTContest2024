@@ -55,6 +55,7 @@ public class pintu2 : MonoBehaviour
         timePG2.ReduceTime(10f);
 
         isChoose = false;
+        COption.wrong += 1;
         // ¼ì²é´ð°¸
 
     }
@@ -68,6 +69,7 @@ public class pintu2 : MonoBehaviour
         timePG2.ReduceTime(10f);
 
         isChoose = false;
+        COption.wrong += 1;
         // ¼ì²é´ð°¸
 
     }
@@ -105,10 +107,6 @@ public class pintu2 : MonoBehaviour
         else
         {
             Debug.Log("´ð´íÀ²!");
-
-
-            COption.wrong += 1;
-
 
         }
     }
