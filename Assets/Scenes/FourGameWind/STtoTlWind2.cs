@@ -14,11 +14,11 @@ public class STtoTlWind2 : MonoBehaviour
     {
         RecordScore.text = "µÃ·Ö£º" + TG2Instance.RecordScore;
 
-        if (TG2Instance.FinalScoreForJG1 >= 60 && TG2Instance.FinalScoreForJG1 < 90)
+        if (TG2Instance.FinalScoreForJG1 >= 60 && TG2Instance.FinalScoreForJG1 < 80)
         {
             buttonImage.sprite = chosenSprite;
         }
-        else if (TG2Instance.FinalScoreForJG1 == 90)
+        else if (TG2Instance.FinalScoreForJG1 >=80&& TG2Instance.FinalScoreForJG1<100)
         {
             buttonImage.sprite = chosenSprite;
             buttonImage2.sprite = chosenSprite;
