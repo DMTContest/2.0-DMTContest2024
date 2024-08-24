@@ -14,11 +14,11 @@ public class STtoillationWind3 : MonoBehaviour
     {
         RecordScore.text = "µÃ·Ö£º" + GG3Instance.RecordScore;
 
-        if (GG3Instance.FinalScoreForPG1 >= 60 && GG3Instance.FinalScoreForPG1 < 90)
+        if (GG3Instance.FinalScoreForPG1 >= 60 && GG3Instance.FinalScoreForPG1 < 80)
         {
             buttonImage.sprite = chosenSprite;
         }
-        else if (GG3Instance.FinalScoreForPG1 == 90)
+        else if (GG3Instance.FinalScoreForPG1 >=80&& GG3Instance.FinalScoreForPG1 <100)
         {
             buttonImage.sprite = chosenSprite;
             buttonImage2.sprite = chosenSprite;
