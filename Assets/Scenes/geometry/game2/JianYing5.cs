@@ -50,6 +50,7 @@ public class JianYing5 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timeYG5.ReduceTime(10f);
+        AOption.wrong += 1;
     }
     public void OnButtonClickB()
     {
@@ -64,7 +65,6 @@ public class JianYing5 : MonoBehaviour
             targetImage1.color = Color.green; // 将颜色设置为绿色
         }
 
-
     }
 
     public void OnButtonClickC()
@@ -74,6 +74,7 @@ public class JianYing5 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timeYG5.ReduceTime(10f);
+        AOption.wrong += 1;
     }
     public void OnButtonClickD()
     {
@@ -113,7 +114,7 @@ public class JianYing5 : MonoBehaviour
             Debug.Log("答错啦!");
 
 
-            AOption.wrong += 1;
+   
 
 
         }

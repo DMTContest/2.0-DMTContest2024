@@ -56,103 +56,62 @@ public class GG2Instance : MonoBehaviour
 
             _time = GetTimeFromScene1();
 
-            JWrong1 = 0;
-
-            Debug.Log("JCorrect1 : " + JCorrect1);
-            Debug.Log("JWrong1 :" + JWrong1);
+            JWrong1 = GetWrongNumFromScene1();
+            Debug.Log("JW1:" + JWrong1);
         }
         if (SceneManager.GetActiveScene().name == "JianYing2")
         {
             JCorrect2 = GetCorrectFromScene2();
             _time = GetTimeFromScene2();
-
-            JWrong2 = 0;
-            Debug.Log("JCorrect2 : " + JCorrect2);
-            Debug.Log("JWrong2 :" + JWrong2);
-
+            JWrong2 = GetWrongNumFromScene2();
         }
         if (SceneManager.GetActiveScene().name == "JianYing3")
         {
             JCorrect3 = GetCorrectFromScene3();
-
             _time = GetTimeFromScene3();
-
-            JWrong3 = 0;
-
-            Debug.Log("JCorrect3 : " + JCorrect3);
-            Debug.Log("JWrong3 :" + JWrong3);
+            JWrong3 = GetWrongNumFromScene3();
         }
         if (SceneManager.GetActiveScene().name == "JianYing4")
         {
             MCorrect1 = GetCorrectFromScene4();
-
             _time = GetTimeFromScene4();
-
-            MWrong1 = 0;
-            Debug.Log("MCorrect1 : " + MCorrect1);
-            Debug.Log("MWrong1 :" + MWrong1);
+            MWrong1 = GetWrongNumFromScene4();
         }
         if (SceneManager.GetActiveScene().name == "JianYing5")
         {
             MCorrect2 = GetCorrectFromScene5();
             _time = GetTimeFromScene5();
-
-            MWrong2 = 0;
-            Debug.Log("MCorrect2 : " + MCorrect2);
-            Debug.Log("MWrong2 :" + MWrong2);
-
+            MWrong2 = GetWrongNumFromScene5();
         }
         if (SceneManager.GetActiveScene().name == "JianYing6")
         {
             MCorrect3 = GetCorrectFromScene6();
-
             _time = GetTimeFromScene6();
-
-            MWrong3 = 0;
-            Debug.Log("MCorrect3 : " + MCorrect3);
-            Debug.Log("MWrong3 :" + MWrong3);
-
+            MWrong3 = GetWrongNumFromScene6();
         }
         if (SceneManager.GetActiveScene().name == "JianYing7")
         {
             HCorrect1 = GetCorrectFromScene7();
-
             _time = GetTimeFromScene7();
-
-            HWrong1 = 0;
-            Debug.Log("HCorrect1 : " + HCorrect1);
-            Debug.Log("HWrong1 :" + HWrong1);
+            HWrong1 = GetWrongNumFromScene7();
         }
         if (SceneManager.GetActiveScene().name == "JianYing8")
         {
             HCorrect2 = GetCorrectFromScene8();
             _time = GetTimeFromScene8();
-
-            HWrong2 = 0;
-            Debug.Log("HCorrect2 : " + HCorrect2);
-            Debug.Log("HWrong2 :" + HWrong2);
-
+            HWrong2 = GetWrongNumFromScene8();
         }
         if (SceneManager.GetActiveScene().name == "JianYing9")
         {
             HCorrect3 = GetCorrectFromScene9();
-
             _time = GetTimeFromScene9();
-
-            HWrong3 = 0;
-            Debug.Log("HCorrect3 : " + HCorrect3);
-            Debug.Log("HWrong3 :" + HWrong3);
-
+            HWrong3 = GetWrongNumFromScene9();
         }
         if (SceneManager.GetActiveScene().name == "JianYing10")
         {
-            HCorrect4 = GetCorrectFromScene210();
-
+            HCorrect4 = GetCorrectFromScene10();
             _time = GetTimeFromScene10();
-
-            HWrong4 = 0;
-            Debug.Log("HCorrect4 : " + HCorrect4);
-            Debug.Log("HWrong4 :" + HWrong4);
+            HWrong4 = GetWrongNumFromScene10();
         }
         if (SceneManager.GetActiveScene().name == "YGFinal")
         {
@@ -195,6 +154,21 @@ public class GG2Instance : MonoBehaviour
         if (c != null)
         {
             return c.correct;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+    private float GetWrongNumFromScene1()
+    {
+        GameObject OC = GameObject.Find("Btn_3");
+
+        JianYing1 c = OC.GetComponent<JianYing1>();
+
+        if (c != null)
+        {
+            return c.wrong;
         }
         else
         {
@@ -286,6 +260,21 @@ public class GG2Instance : MonoBehaviour
             return 0f;
         }
     }
+    private float GetWrongNumFromScene2()
+    {
+        GameObject OC = GameObject.Find("Btn_2");
+
+        JianYing2 c = OC.GetComponent<JianYing2>();
+
+        if (c != null)
+        {
+            return c.wrong;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
     private float GetCorrectFromScene2()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
@@ -308,6 +297,20 @@ public class GG2Instance : MonoBehaviour
         if (c != null)
         {
             return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+    private float GetWrongNumFromScene3()
+    {
+        GameObject OA = GameObject.Find("Btn_2");
+
+        JianYing3 c = OA.GetComponent<JianYing3>();
+        if (c != null)
+        {
+            return c.wrong;
         }
         else
         {
@@ -341,6 +344,20 @@ public class GG2Instance : MonoBehaviour
             return 0f;
         }
     }
+    private float GetWrongNumFromScene4()
+    {
+        GameObject OC = GameObject.Find("Btn_2");
+
+        JianYing4 c = OC.GetComponent<JianYing4>();
+        if (c != null)
+        {
+            return c.wrong;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
     private float GetCorrectFromScene4()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
@@ -368,10 +385,24 @@ public class GG2Instance : MonoBehaviour
             return 0f;
         }
     }
+    private float GetWrongNumFromScene5()
+    {
+        GameObject OB = GameObject.Find("Btn_1");
+
+        JianYing5 c = OB.GetComponent<JianYing5>();
+        if (c != null)
+        {
+            return c.wrong;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
     private float GetCorrectFromScene5()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-        GameObject OA = GameObject.Find("Btn_1");
+        GameObject OA = GameObject.Find("Btn_2");
         JianYing5 c = OA.GetComponent<JianYing5>();
         if (c != null)
         {
@@ -390,6 +421,19 @@ public class GG2Instance : MonoBehaviour
         if (c != null)
         {
             return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+    private float GetWrongNumFromScene6()
+    {
+        GameObject OB = GameObject.Find("Btn_2");
+        JianYing6 c = OB.GetComponent<JianYing6>();
+        if (c != null)
+        {
+            return c.wrong;
         }
         else
         {
@@ -423,6 +467,20 @@ public class GG2Instance : MonoBehaviour
             return 0f;
         }
     }
+    private float GetWrongNumFromScene7()
+    {
+        GameObject OB = GameObject.Find("Btn_3");
+
+        JianYing7 c = OB.GetComponent<JianYing7>();
+        if (c != null)
+        {
+            return c.wrong;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
     private float GetCorrectFromScene7()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
@@ -450,10 +508,24 @@ public class GG2Instance : MonoBehaviour
             return 0f;
         }
     }
+    private float GetWrongNumFromScene8()
+    {
+        GameObject OB = GameObject.Find("Btn_3");
+
+        JianYing8 c = OB.GetComponent<JianYing8>();
+        if (c != null)
+        {
+            return c.wrong;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
     private float GetCorrectFromScene8()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
-        GameObject OA = GameObject.Find("Btn_1");
+        GameObject OA = GameObject.Find("Btn_2");
         JianYing8 c = OA.GetComponent<JianYing8>();
         if (c != null)
         {
@@ -471,6 +543,20 @@ public class GG2Instance : MonoBehaviour
         if (c != null)
         {
             return c.timeStart;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+    private float GetWrongNumFromScene9()
+    {
+        GameObject OE = GameObject.Find("Btn_1");
+
+        JianYing9 c = OE.GetComponent<JianYing9>();
+        if (c != null)
+        {
+            return c.wrong;
         }
         else
         {
@@ -504,7 +590,22 @@ public class GG2Instance : MonoBehaviour
             return 0f;
         }
     }
-    private float GetCorrectFromScene210()
+    private float GetWrongNumFromScene10()
+    {
+        GameObject OA = GameObject.Find("Btn_2");
+
+        JianYing10 c = OA.GetComponent<JianYing10>();
+
+        if (c != null)
+        {
+            return c.wrong;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+    private float GetCorrectFromScene10()
     {
         // 查找 Clock1 脚本并获取其 time 属性的值
         GameObject OA = GameObject.Find("Btn_1");

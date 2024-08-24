@@ -13,6 +13,7 @@ public class JianYing3 : MonoBehaviour
     public Image targetImage2; // 添加对目标Image的引用
 
     public float correct;
+    public float wrong;
     public TimeYG3 timeYG3;
     private void Start()
     {
@@ -41,6 +42,7 @@ public class JianYing3 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timeYG3.ReduceTime(10f);
+        BOption.wrong += 1;
     }
     public void OnButtonClickA()
     {
@@ -65,6 +67,7 @@ public class JianYing3 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timeYG3.ReduceTime(10f);
+        BOption.wrong += 1;
     }
     public void OnButtonClickD()
     {

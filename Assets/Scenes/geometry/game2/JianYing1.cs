@@ -54,7 +54,7 @@ public class JianYing1 : MonoBehaviour
         CheckAnswer();
         timeYG1.ReduceTime(10f);
 
-
+        COption.wrong += 1;
 
     }
 
@@ -68,6 +68,7 @@ public class JianYing1 : MonoBehaviour
         timeYG1.ReduceTime(10f);
 
         isChoose = false;
+        COption.wrong += 1;
         // 检查答案
     }
     public void OnButtonClickD()
@@ -77,6 +78,7 @@ public class JianYing1 : MonoBehaviour
         isChoose = false;
         // 检查答案
         CheckAnswer();
+        COption.wrong += 1;
         // 修改Image颜色
 
 
@@ -105,7 +107,7 @@ public class JianYing1 : MonoBehaviour
             Debug.Log("答错啦!");
 
 
-            AOption.wrong += 1;
+           
 
 
         }

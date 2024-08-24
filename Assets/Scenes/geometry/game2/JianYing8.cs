@@ -71,6 +71,8 @@ public class JianYing8 : MonoBehaviour
         // ¼ì²é´ð°¸
         CheckAnswer();
         timeYG8.ReduceTime(10f);
+
+        COption.wrong += 1;
     }
     public void OnButtonClickD()
     {
@@ -79,6 +81,8 @@ public class JianYing8 : MonoBehaviour
         // ¼ì²é´ð°¸
         CheckAnswer();
         timeYG8.ReduceTime(10f);
+
+        COption.wrong += 1;
     }
     private void CheckAnswer()
     {
@@ -103,7 +107,6 @@ public class JianYing8 : MonoBehaviour
             Debug.Log("´ð´íÀ²!");
 
 
-            COption.wrong += 1;
 
 
         }

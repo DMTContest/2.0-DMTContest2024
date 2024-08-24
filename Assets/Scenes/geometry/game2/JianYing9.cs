@@ -40,6 +40,7 @@ public class JianYing9 : MonoBehaviour
         // ¼ì²é´ð°¸
         CheckAnswer();
         timeYG9.ReduceTime(10f);
+        AOption.wrong += 1;
     }
     public void OnButtonClickB()
     {
@@ -64,6 +65,7 @@ public class JianYing9 : MonoBehaviour
         // ¼ì²é´ð°¸
         CheckAnswer();
         timeYG9.ReduceTime(10f);
+        AOption.wrong += 1;
     }
     public void OnButtonClickD()
     {
@@ -103,7 +105,7 @@ public class JianYing9 : MonoBehaviour
             Debug.Log("´ð´íÀ²!");
 
 
-            AOption.wrong += 1;
+            
 
 
         }

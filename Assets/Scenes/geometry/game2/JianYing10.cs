@@ -50,6 +50,7 @@ public class JianYing10 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         timeYG10.ReduceTime(10f);
+        BOption.wrong += 1;
     }
     public void OnButtonClickA()
     {
@@ -89,6 +90,7 @@ public class JianYing10 : MonoBehaviour
         // 检查答案
         CheckAnswer();
         // 修改Image颜色
+        BOption.wrong += 1;
 
 
     }
@@ -115,7 +117,7 @@ public class JianYing10 : MonoBehaviour
             Debug.Log("答错啦!");
 
 
-            BOption.wrong += 1;
+
 
 
         }
