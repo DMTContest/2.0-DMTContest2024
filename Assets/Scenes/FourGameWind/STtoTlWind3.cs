@@ -15,11 +15,11 @@ public class STtoTlWind3 : MonoBehaviour
         Debug.Log("À´");
         RecordScore.text = "µÃ·Ö£º" + TG3Instance.RecordScore;
 
-        if (TG3Instance.FinalScoreForFG1 >= 60 && TG3Instance.FinalScoreForFG1 < 90)
+        if (TG3Instance.FinalScoreForFG1 >= 60 && TG3Instance.FinalScoreForFG1 < 80)
         {
             buttonImage.sprite = chosenSprite;
         }
-        else if (TG3Instance.FinalScoreForFG1 == 90)
+        else if (TG3Instance.FinalScoreForFG1>=80&& TG3Instance.FinalScoreForFG1<100)
         {
             buttonImage.sprite = chosenSprite;
             buttonImage2.sprite = chosenSprite;
